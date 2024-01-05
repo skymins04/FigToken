@@ -1,5 +1,5 @@
 {
-  "name": "figma-design-token-exporter",
+  "name": "design-token-exporter",
   "private": true,
   "scripts": {
     "build": "turbo build",
@@ -8,13 +8,13 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
+    "@design-token-exporter/eslint": "workspace:^",
+    "@design-token-exporter/tsconfig": "workspace:^",
     "prettier": "^3.1.0",
     "turbo": "latest"
   },
   "packageManager": "pnpm@8.9.0",
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   }
 }

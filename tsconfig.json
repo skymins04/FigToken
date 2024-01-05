@@ -1,3 +1,4 @@
 {
-  "extends": "@repo/typescript-config/base.json"
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@design-token-exporter/tsconfig/base.json"
 }

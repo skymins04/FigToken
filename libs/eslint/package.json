@@ -1,5 +1,5 @@
 {
-  "name": "@repo/eslint-config",
+  "name": "@design-token-exporter/eslint",
   "version": "0.0.0",
   "private": true,
   "files": [
