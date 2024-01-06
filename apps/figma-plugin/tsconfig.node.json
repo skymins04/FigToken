@@ -1,0 +1,17 @@
+{
+  "extends": "@design-token-exporter/tsconfig/base.json",
+  "compilerOptions": {
+    "composite": true,
+    "skipLibCheck": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./",
+    "paths": {
+      "@common/*": ["./src/common/*"],
+      "@ui/*": ["./src/ui/*"],
+      "@controller/*": ["./src/controller"]
+    }
+  },
+  "include": ["vite.*.config.ts"]
+}
