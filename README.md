@@ -1,81 +1,26 @@
-# Turborepo starter
+<p align="center">
+  <img src="./libs/assets/figma-logo-orig.svg" height="200px" alt="FigToken Logo"/>
+</p>
+<h1 align="center">FigToken</h1>
 
-This is an official starter Turborepo.
+<p align="center">
+   Based on Figma, it is a project that helps to continuously integrate design tokens, the foundation of the design system, with codebases.
+</p>
 
-## Using this example
+## Key Features
 
-Run the following command:
+- **_Export to Code from Figma Variable / Style Design Token_**: The FigToken provides Figma Plugin and CLI for exporting the Figma Variable / Style. FigToken Figma Plugin and CLI support different formats for exporting Figma Variable / Style into code. You can export Figma design tokens in the form of Pure-CSS, JS-wrapped-CSS-Variable, Emotion-theme, Tailwind-theme, etc.
 
-```sh
-npx create-turbo@latest
-```
+  - Support Export Formats:
+    - Pure CSS
+    - JS wrapped CSS Variables
+    - Emotion theme
+    - Tailwind theme
 
-## What's inside?
+- **_Provides GitHub Marketplace Action for Continued Integration of Design Tokens_**: By adding FigToken Marketplace Action to the GitHub Action workflow, you can automate the integration of design tokens and code bases through the CI pipeline. This action works with FigToken Figma Plugin and FigToken CLI.
 
-This Turborepo includes the following packages/apps:
+## Monorepo Apps
 
-### Apps and Packages
-
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm build
-```
-
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm dev
-```
-
-### Remote Caching
-
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+- [**_figma-plugin_**](./apps/figma-plugin): This is a monorepo app for developing Figma Plugin from FigToken.
+- **_github-action_**: This is a monorepo app for developing GitHub Marketplace Action from FigToken.
+- **_cli_**: This is a monorepo app for developing CLI from FigToken.
