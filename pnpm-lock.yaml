@@ -8,10 +8,10 @@ importers:
 
   .:
     devDependencies:
-      '@design-token-exporter/tsconfig':
+      '@fig-token/tsconfig':
         specifier: workspace:^
         version: link:libs/tsconfig
-      eslint-config-design-token-exporter:
+      eslint-config-fig-token:
         specifier: workspace:^
         version: link:libs/eslint
       prettier:
@@ -42,10 +42,10 @@ importers:
         specifier: ^2.2.4
         version: 2.2.4(react@18.2.0)
     devDependencies:
-      '@design-token-exporter/tailwind':
+      '@fig-token/tailwind':
         specifier: workspace:^
         version: link:../../libs/tailwind
-      '@design-token-exporter/tsconfig':
+      '@fig-token/tsconfig':
         specifier: workspace:^
         version: link:../../libs/tsconfig
       '@figma/plugin-typings':
@@ -78,7 +78,7 @@ importers:
       eslint:
         specifier: ^8.55.0
         version: 8.56.0
-      eslint-config-design-token-exporter:
+      eslint-config-fig-token:
         specifier: workspace:^
         version: link:../../libs/eslint
       eslint-plugin-react-hooks:

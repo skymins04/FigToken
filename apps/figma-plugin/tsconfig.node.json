@@ -1,5 +1,5 @@
 {
-  "extends": "@design-token-exporter/tsconfig/base.json",
+  "extends": "@fig-token/tsconfig/base.json",
   "compilerOptions": {
     "composite": true,
     "skipLibCheck": true,

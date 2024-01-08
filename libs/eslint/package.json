@@ -1,5 +1,5 @@
 {
-  "name": "eslint-config-design-token-exporter",
+  "name": "eslint-config-fig-token",
   "version": "0.0.0",
   "private": true,
   "files": [
