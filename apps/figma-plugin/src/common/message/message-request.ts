@@ -7,9 +7,10 @@ export const sendRequestMessage = async (
 ) => {
   parent.postMessage(
     {
-      pluginMessage: Object.assign(body, {
+      pluginMessage: {
+        ...body,
         endpoint: REQ_ENDPOINT(method, endpoint),
-      }),
+      },
     },
     "*"
   );

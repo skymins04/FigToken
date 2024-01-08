@@ -17,10 +17,11 @@ export default defineConfig({
     eslint(),
   ],
   build: {
+    target: "es2017",
     lib: {
       name: figmaManifest.name,
-      entry: resolve(__dirname, "src", "controller", "main.ts"),
-      fileName: "controller",
+      entry: resolve(__dirname, "src", "code", "main.ts"),
+      fileName: "code",
       formats: ["es"],
     },
     emptyOutDir: false,
@@ -29,7 +30,7 @@ export default defineConfig({
   resolve: {
     alias: {
       "@common": resolve(__dirname, "./src/common"),
-      "@controller": resolve(__dirname, "./src/controller"),
+      "@code": resolve(__dirname, "./src/code"),
       "@ui": resolve(__dirname, "./src/ui"),
     },
   },

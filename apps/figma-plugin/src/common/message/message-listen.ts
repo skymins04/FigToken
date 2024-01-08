@@ -54,9 +54,10 @@ class _MessageListener {
     endpoint: string,
     data: Record<string, unknown>
   ) {
-    figma.ui.postMessage(
-      Object.assign(data, { endpoint: REQ_ENDPOINT(method, endpoint) })
-    );
+    figma.ui.postMessage({
+      ...data,
+      endpoint: REQ_ENDPOINT(method, endpoint),
+    });
   }
 
   private readonly EXIST_LISTENER_ERROR = new Error(

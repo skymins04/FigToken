@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build -c ./vite.ui.config.ts --emptyOutDir && vite build -c ./vite.controller.config.ts",
+    "build": "vite build -c ./vite.ui.config.ts && vite build -c ./vite.code.config.ts",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
@@ -13,12 +13,15 @@
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.10",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.21.1",
+    "swr": "^2.2.4"
   },
   "devDependencies": {
     "@design-token-exporter/tailwind": "workspace:^",
     "@design-token-exporter/tsconfig": "workspace:^",
     "@figma/plugin-typings": "^1.83.0",
+    "@swc/core": "^1.3.102",
     "@types/node": "^20.10.6",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",

@@ -10,7 +10,7 @@
     "paths": {
       "@common/*": ["./src/common/*"],
       "@ui/*": ["./src/ui/*"],
-      "@controller/*": ["./src/controller"]
+      "@code/*": ["./src/code"]
     }
   },
   "include": ["vite.*.config.ts"]

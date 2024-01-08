@@ -2,7 +2,7 @@
   "name": "Design Token Exporter",
   "id": "00000000",
   "api": "1.0.0",
-  "main": "controller.js",
+  "main": "code.js",
   "ui": "index.html",
   "editorType": ["figma"]
 }
