@@ -1,19 +1,15 @@
-import { useEffect } from "react";
-import { sendRequestMessage } from "../common/message/message-request";
+import { StrictMode } from "react";
+import { SWRConfig } from "swr";
+import { Router } from "./router";
 
 function App() {
-  useEffect(() => {
-    sendRequestMessage("GET", "/")
-      .then((res) => {
-        // eslint-disable-next-line no-console
-        console.log("success", res);
-      })
-      .catch((e) => {
-        console.error("error", e);
-      });
-  }, []);
-
-  return <></>;
+  return (
+    <StrictMode>
+      <SWRConfig>
+        <Router />
+      </SWRConfig>
+    </StrictMode>
+  );
 }
 
 export default App;
