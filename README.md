@@ -2,9 +2,17 @@
   <img src="./libs/assets/figma-logo-orig.svg" height="200px" alt="FigToken Logo"/>
 </p>
 <h1 align="center">FigToken</h1>
-
 <p align="center">
-   Based on Figma, it is a project that helps to continuously integrate design tokens, the foundation of the design system, with codebases.
+   Toolchain for continuous integration of Figma Design Token and CodeBase
+</p>
+<p align="center">
+  <a aria-label="last commit" href="https://github.com/skymins04/FigToken/commits/main">
+    <img alt="" src="https://img.shields.io/github/last-commit/skymins04/FigToken.svg" />
+  </a>
+  <a aria-label="license" href="https://github.com/skymins04/FigToken/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/skymins04/FigToken.svg" alt="">
+  </a>
+  <img alt="Language" src="https://img.shields.io/badge/Language-Typescript-blue?logo=typescript"/>
 </p>
 
 ## Key Features
