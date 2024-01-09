@@ -8,8 +8,9 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
-    "eslint-config-fig-token": "workspace:^",
+    "@changesets/cli": "^2.27.1",
     "@fig-token/tsconfig": "workspace:^",
+    "eslint-config-fig-token": "workspace:^",
     "prettier": "^3.1.0",
     "turbo": "latest"
   },
