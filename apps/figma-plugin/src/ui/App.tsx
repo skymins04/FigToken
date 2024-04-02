@@ -1,15 +1,16 @@
 import { StrictMode } from "react";
 import { SWRConfig } from "swr";
-import { Router } from "./router";
+import { ThemeProvider } from "@ui/components";
+import { Pages } from "@ui/pages";
 
-function App() {
+export const App = () => {
   return (
     <StrictMode>
       <SWRConfig>
-        <Router />
+        <ThemeProvider defaultTheme="light" storageKey="theme">
+          <Pages />
+        </ThemeProvider>
       </SWRConfig>
     </StrictMode>
   );
-}
-
-export default App;
+};

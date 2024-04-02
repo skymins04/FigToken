@@ -7,12 +7,12 @@
 </p>
 <p align="center">
   <a aria-label="last commit" href="https://github.com/skymins04/FigToken/commits/main">
-    <img alt="" src="https://img.shields.io/github/last-commit/skymins04/FigToken.svg" />
+    <img alt="" src="https://img.shields.io/github/last-commit/skymins04/FigToken.svg?style=flat-square" />
   </a>
   <a aria-label="license" href="https://github.com/skymins04/FigToken/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/skymins04/FigToken.svg" alt="">
+    <img src="https://img.shields.io/github/license/skymins04/FigToken.svg?style=flat-square" alt="">
   </a>
-  <img alt="Language" src="https://img.shields.io/badge/Language-Typescript-blue?logo=typescript"/>
+  <img alt="Language" src="https://img.shields.io/badge/Language-Typescript-blue?logo=typescript&style=flat-square"/>
 </p>
 
 ## Key Features

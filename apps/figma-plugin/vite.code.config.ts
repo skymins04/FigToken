@@ -8,13 +8,13 @@ import figmaManifest from "./manifest.json";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    viteSingleFile(),
     generateFile({
       type: "json",
       output: "./manifest.json",
       data: figmaManifest,
     }),
     eslint(),
+    viteSingleFile(),
   ],
   build: {
     target: "es2017",
@@ -25,6 +25,7 @@ export default defineConfig({
       formats: ["es"],
     },
     emptyOutDir: false,
+    minify: true,
     outDir: resolve(__dirname, "dist"),
   },
   resolve: {

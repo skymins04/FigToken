@@ -8,7 +8,7 @@ export const sendRequestMessage = async (
   parent.postMessage(
     {
       pluginMessage: {
-        ...body,
+        body,
         endpoint: REQ_ENDPOINT(method, endpoint),
       },
     },

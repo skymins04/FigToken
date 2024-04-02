@@ -7,7 +7,7 @@ export class VariablesController {
   }
 
   getVariablesCollections() {
-    MessageListener.get("/variables/collections", () => {
+    MessageListener.get("/variables/collections", async () => {
       return this.variablesService.getVariablesCollections();
     });
   }

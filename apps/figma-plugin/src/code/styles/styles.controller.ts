@@ -9,21 +9,21 @@ export class StylesController {
   }
 
   getColorStyles() {
-    MessageListener.get("/styles/colors", () => {
+    MessageListener.get("/styles/colors", async () => {
       const colorStyles = this.stylesService.getColorStyles();
       return colorStyles;
     });
   }
 
   getEffectStyles() {
-    MessageListener.get("/styles/effects", () => {
+    MessageListener.get("/styles/effects", async () => {
       const effectStyles = this.stylesService.getEffectStyles();
       return effectStyles;
     });
   }
 
   getTextStyles() {
-    MessageListener.get("/styles/texts", () => {
+    MessageListener.get("/styles/texts", async () => {
       const effectStyles = this.stylesService.getTextStyles();
       return effectStyles;
     });

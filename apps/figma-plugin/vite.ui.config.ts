@@ -6,11 +6,13 @@ import { resolve } from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), viteSingleFile(), eslint()],
+  plugins: [react(), eslint(), viteSingleFile()],
   root: resolve(__dirname, "src", "ui"),
   build: {
     outDir: resolve(__dirname, "dist"),
     emptyOutDir: true,
+    minify: true,
+    cssMinify: true,
     rollupOptions: {
       input: {
         ui: resolve(__dirname, "src", "ui", "index.html"),

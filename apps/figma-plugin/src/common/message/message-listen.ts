@@ -1,5 +1,7 @@
 import { MessageMethod, REQ_ENDPOINT } from "./message-constant";
 
+type MessageListenerHandler = (body: Record<string, any>) => Promise<any>;
+
 class _MessageListener {
   constructor() {
     this.initMessageListener();
@@ -7,34 +9,38 @@ class _MessageListener {
 
   private listeners: Record<
     string,
-    { method: MessageMethod; endpoint: string; handler: () => any }
+    {
+      method: MessageMethod;
+      endpoint: string;
+      handler: MessageListenerHandler;
+    }
   > = {};
 
   private initMessageListener() {
-    figma.ui.on("message", (pluginMessage: any) => {
+    figma.ui.on("message", async (pluginMessage: any) => {
       const validatedPluginMessageEndpoint = this.valiatePluginMessageEndpoint(
         pluginMessage?.endpoint
       );
       if (!validatedPluginMessageEndpoint) return;
 
       const listener = this.listeners[validatedPluginMessageEndpoint];
-      if (!listener) {
+      if (listener === undefined) {
         const [method, endpoint] = validatedPluginMessageEndpoint.split(":");
-        this.sendResponseMessage(method as MessageMethod, endpoint, {
+        return this.sendResponseMessage(method as MessageMethod, endpoint, {
           success: false,
           error: "not found endpoint",
         });
       }
 
       try {
-        const res = listener.handler();
-        this.sendResponseMessage(listener.method, listener.endpoint, {
+        const res = await listener.handler(pluginMessage.body);
+        return this.sendResponseMessage(listener.method, listener.endpoint, {
           success: true,
           data: res,
         });
       } catch (e) {
         console.error(e);
-        this.sendResponseMessage(listener.method, listener.endpoint, {
+        return this.sendResponseMessage(listener.method, listener.endpoint, {
           success: false,
           error: e,
         });
@@ -67,7 +73,7 @@ class _MessageListener {
   private registListner(
     method: MessageMethod,
     endpoint: string,
-    handler: () => any
+    handler: MessageListenerHandler
   ) {
     const requestEndpoint = REQ_ENDPOINT(method, endpoint);
     if (this.listeners[requestEndpoint]) {
@@ -81,23 +87,23 @@ class _MessageListener {
     };
   }
 
-  get(endpoint: string, handler: () => any) {
+  get(endpoint: string, handler: MessageListenerHandler) {
     this.registListner("GET", endpoint, handler);
   }
 
-  post(endpoint: string, handler: () => any) {
+  post(endpoint: string, handler: MessageListenerHandler) {
     this.registListner("POST", endpoint, handler);
   }
 
-  put(endpoint: string, handler: () => any) {
+  put(endpoint: string, handler: MessageListenerHandler) {
     this.registListner("PUT", endpoint, handler);
   }
 
-  patch(endpoint: string, handler: () => any) {
+  patch(endpoint: string, handler: MessageListenerHandler) {
     this.registListner("PATCH", endpoint, handler);
   }
 
-  delete(endpoint: string, handler: () => any) {
+  delete(endpoint: string, handler: MessageListenerHandler) {
     this.registListner("DELETE", endpoint, handler);
   }
 }
